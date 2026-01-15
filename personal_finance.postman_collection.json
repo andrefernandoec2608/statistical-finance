@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "325577c1-d196-4e9b-9098-ed630efd0f01",
+		"name": "personal_finance",
+		"description": "Andre Llumiquinga - APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35100252"
+	},
+	"item": [
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "transactions_get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transactions"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:5000/transactions\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "transactions_get_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/transactions/9999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transactions",
+								"9999"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:5000/transactions/1\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "transactions_create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 9999,\r\n    \"account_id\": 2,\r\n    \"date\": \"2025-01-15\",\r\n    \"amount\": 25.50,\r\n    \"category\": \"Food\",\r\n    \"description\": \"Lunch\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transactions"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:5000/transactions \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"id\": 1,\r\n    \"account_id\": 2,\r\n    \"date\": \"2025-01-15\",\r\n    \"amount\": 25.50,\r\n    \"category\": \"Food\",\r\n    \"description\": \"Lunch\"\r\n  }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "transactions_update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Lunch with colleagues Update\",\r\n    \"category\": \"Food\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/transactions/9999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transactions",
+								"9999"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT http://localhost:5000/transactions/1 \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"description\": \"Lunch with colleagues\",\r\n    \"category\": \"Food\"\r\n  }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "transactions_delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/transactions/9999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transactions",
+								"9999"
+							]
+						},
+						"description": "Generated from cURL: curl -X DELETE http://localhost:5000/transactions/1"
+					},
+					"response": []
+				},
+				{
+					"name": "transactions_statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/transactions/statistics?start_date=2025-01-01&end_date=2025-06-30&transaction_type=Income",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transactions",
+								"statistics"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-06-30"
+								},
+								{
+									"key": "transaction_type",
+									"value": "Income"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:5000/transactions/statistics?start_date=2025-01-01&end_date=2025-06-30&transaction_type=Income\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "transactions_category_summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/transactions/category-summary?start_date=2025-01-01&end_date=2025-03-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transactions",
+								"category-summary"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-03-31"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:5000/transactions/category-summary?start_date=2025-01-01&end_date=2025-03-31\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "transactions_monthly_forecast",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/transactions/monthly-forecast?start_date=2025-01-01&end_date=2025-12-31&transaction_type=Expense&months_to_predict=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transactions",
+								"monthly-forecast"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-12-31"
+								},
+								{
+									"key": "transaction_type",
+									"value": "Expense"
+								},
+								{
+									"key": "months_to_predict",
+									"value": "3"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:5000/transactions/monthly-forecast?start_date=2025-01-01&end_date=2025-06-30&transaction_type=Expense&months_to_predict=3\"\r\n"
+					},
+					"response": []
+				}
+			],
+			"description": "Transactions' APIS"
+		},
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "accounts_get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"accounts"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:5000/accounts\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "accounts_id_get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/accounts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"accounts",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:5000/accounts/1\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "accounts_create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 999,\r\n    \"name\": \"Mary\",\r\n    \"account_type\": \"Bank\",\r\n    \"currency\": \"USD\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"accounts"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:5000/accounts \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"id\": 1,\r\n    \"name\": \"Mary\",\r\n    \"account_type\": \"BankAccount\",\r\n    \"currency\": \"USD\"\r\n  }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "accounts_update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mary Updated\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/accounts/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"accounts",
+								"999"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT http://localhost:5000/accounts/1 \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"name\": \"Mary Updated\"\r\n  }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "accounts_delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/accounts/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"accounts",
+								"999"
+							]
+						},
+						"description": "Generated from cURL: curl -X DELETE http://localhost:5000/accounts/1\r\n"
+					},
+					"response": []
+				}
+			],
+			"description": "Accounts's APIs"
+		}
+	]
+}
