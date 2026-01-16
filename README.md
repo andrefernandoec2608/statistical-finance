@@ -1,6 +1,6 @@
 # Personal Finance Manager 💸
 
-This is the final project for my first midterm of the **Python Practical Classes** in the **Master's Program at ELTE** 🏦.
+This is the final project for my last midterm of the **Python Practical Classes** in the **Master's Program at ELTE** 🏦.
 
 It is a **REST API** application built with Flask for managing personal finance: accounts, transactions, and budgets. The project uses **virtual environments**, **SQLite database**, and a modular architecture following the DAO (Data Access Object) pattern.
 
